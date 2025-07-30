@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cineplex Theater - Premium Movie Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🎬 Cineplex Theater</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#movies" class="nav-link">Movies</a>
+                    <a href="#showtimes" class="nav-link">Showtimes</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search movies..." class="search-input">
+                    <button class="search-btn">🔍</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <section class="hero" id="home">
+        <div class="hero-carousel">
+            <div class="hero-slide active" data-movie="1">
+                <div class="hero-backdrop"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-info">
+
+                            <h3 class="hero-title">Superman</h3>
+                            <p class="hero-meta">PG-13 • Action/Adventure • 2h 15min</p>
+                            <p class="hero-description">James Gunn's reboot of Superman kicks off a new generation of the DC Cinematic Universe, focusing on Lois Lane and Clark Kent's relationship.</p>
+                            <div class="hero-buttons">
+                                <button class="btn btn-primary" onclick="openMovieDetails(1)">Watch Trailer</button>
+                                <button class="btn btn-secondary" onclick="openMovieDetails(1)">Book Now</button>
+                            </div>
+                        </div>
+                        <div class="hero-poster">
+                            <img src="https://pyxis.nymag.com/v1/imgs/b91/219/9cfbde48d3984c2f7237a41e45868bd425-superman-trailer.2x.rsocial.w600.png" alt="Superman" class="poster-png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-navigation">
+            <button class="hero-nav-btn prev" onclick="previousSlide()">‹</button>
+            <button class="hero-nav-btn next" onclick="nextSlide()">›</button>
+        </div>
+    </section>
+
+    
+    <section class="movies-section" id="movies">
+        <div class="container">
+            <div class="section-header">
+                <h2>Now Playing</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="Action">Action</button>
+                    <button class="filter-btn" data-filter="Animation">Animation</button>
+                    <button class="filter-btn" data-filter="Horror">Horror</button>
+                    <button class="filter-btn" data-filter="Sports">Sports</button>
+                </div>
+            </div>
+            <div class="movies-grid" id="nowPlayingGrid">
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="movies-section coming-soon">
+        <div class="container">
+            <h2>Coming Soon</h2>
+            <div class="movies-grid" id="comingSoonGrid">
+                
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="amenities-section" id="about">
+        <div class="container">
+            <h2>Theater Amenities</h2>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">🎦</div>
+                    <h3>IMAX Experience</h3>
+                    <p>Immerse yourself in stunning visuals and crystal-clear sound</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🔊</div>
+                    <h3>Dolby Atmos</h3>
+                    <p>360-degree surround sound technology</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🪑</div>
+                    <h3>Reclining Seats</h3>
+                    <p>Premium comfort with fully reclining leather seats</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🍿</div>
+                    <h3>Concessions</h3>
+                    <p>Fresh popcorn, snacks, and beverages</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">🚗</div>
+                    <h3>Free Parking</h3>
+                    <p>Convenient parking for all guests</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">⭐</div>
+                    <h3>VIP Experience</h3>
+                    <p>Premium seating with food and beverage service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎬 Cineplex Theater</h3>
+                    <p>Downtown Entertainment District</p>
+                    <p>123 Cinema Boulevard</p>
+                    <p>Phone: (555) 123-MOVIE</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#movies">Movies</a></li>
+                        <li><a href="#showtimes">Showtimes</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" target="_blank">Facebook</a>
+                        <a href="#" target="_blank">Twitter</a>
+                        <a href="#" target="_blank">Instagram</a>
+                        <a href="#" target="_blank">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cineplex Theater. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="modal hidden" id="movieModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="movie-details">
+                <div class="movie-poster-section">
+                    <img id="modalPoster" src="" alt="" class="modal-poster">
+                </div>
+                <div class="movie-info-section">
+                    <h2 id="modalTitle"></h2>
+                    <div class="movie-meta">
+                        <span id="modalRating"></span>
+                        <span id="modalGenre"></span>
+                        <span id="modalDuration"></span>
+                    </div>
+                    <p id="modalDescription"></p>
+                    <div class="cast-crew">
+                        <h4>Director</h4>
+                        <p id="modalDirector"></p>
+                        <h4>Cast</h4>
+                        <p id="modalCast"></p>
+                    </div>
+                    <div class="booking-section">
+                        <button class="btn btn-primary" onclick="showBookingFlow()">Book Tickets</button>
+                        <button class="btn btn-secondary" onclick="playTrailer()">Watch Trailer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal hidden" id="bookingModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content booking-modal">
+            <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            <div class="booking-steps">
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">1. Select Showtime</div>
+                    <div class="step" data-step="2">2. Choose Seats</div>
+                    <div class="step" data-step="3">3. Customer Info</div>
+                    <div class="step" data-step="4">4. Confirmation</div>
+                </div>
+
+                
+                <div class="booking-step active" id="step1">
+                    <h3>Select Showtime & Theater</h3>
+                    <div class="showtime-selection">
+                        <div class="date-selector">
+                            <h4>Select Date</h4>
+                            <div class="date-options" id="dateOptions">
+                                
+                            </div>
+                        </div>
+                        <div class="theater-showtimes" id="theaterShowtimes">
+                            
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="nextBookingStep()" id="nextStep1" disabled>Select Seats</button>
+                </div>
+
+                
+                <div class="booking-step" id="step2">
+                    <h3>Choose Your Seats</h3>
+                    <div class="theater-info">
+                        <p id="selectedTheaterInfo"></p>
+                        <p id="selectedShowtimeInfo"></p>
+                    </div>
+                    <div class="seat-map-container">
+                        <div class="screen">SCREEN</div>
+                        <div class="seat-map" id="seatMap">
+                            
+                        </div>
+                        <div class="seat-legend">
+                            <div class="legend-item">
+                                <div class="seat available"></div>
+                                <span>Available</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="seat selected"></div>
+                                <span>Selected</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="seat occupied"></div>
+                                <span>Occupied</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking-summary">
+                        <p>Selected Seats: <span id="selectedSeats">None</span></p>
+                        <p>Total: $<span id="totalPrice">0.00</span></p>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="btn btn-secondary" onclick="prevBookingStep()">Back</button>
+                        <button class="btn btn-primary" onclick="nextBookingStep()" id="nextStep2" disabled>Continue</button>
+                    </div>
+                </div>
+
+                
+                <div class="booking-step" id="step3">
+                    <h3>Customer Information</h3>
+                    <form class="booking-form" id="customerForm">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="customerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="customerEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="customerPhone" required>
+                        </div>
+                    </form>
+                    <div class="step-buttons">
+                        <button class="btn btn-secondary" onclick="prevBookingStep()">Back</button>
+                        <button class="btn btn-primary" onclick="nextBookingStep()" id="nextStep3">Complete Booking</button>
+                    </div>
+                </div>
+
+                
+                <div class="booking-step" id="step4">
+                    <h3>Booking Confirmation</h3>
+                    <div class="confirmation-details">
+                        <div class="confirmation-section">
+                            <h4>Movie Details</h4>
+                            <p id="confirmMovie"></p>
+                            <p id="confirmShowtime"></p>
+                            <p id="confirmTheater"></p>
+                        </div>
+                        <div class="confirmation-section">
+                            <h4>Seats & Pricing</h4>
+                            <p id="confirmSeats"></p>
+                            <p id="confirmTotal"></p>
+                        </div>
+                        <div class="confirmation-section">
+                            <h4>Customer Information</h4>
+                            <p id="confirmCustomer"></p>
+                        </div>
+                        <div class="booking-id">
+                            <h4>Booking ID: <span id="bookingId"></span></h4>
+                        </div>
+                    </div>
+                    <div class="step-buttons">
+                        <button class="btn btn-primary" onclick="closeBookingModal()">Close</button>
+                        <button class="btn btn-secondary" onclick="printTicket()">Print Ticket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
