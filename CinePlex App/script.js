@@ -1,6 +1,5 @@
-// Cinema Website JavaScript
+// Cineplex Theater
 
-// Movie data from the provided JSON
 const moviesData = {
   "movies": [
     {
@@ -159,8 +158,6 @@ const moviesData = {
     "aisles": [4, 12]
   }
 };
-
-// Global variables
 let currentHeroSlide = 0;
 let selectedMovie = null;
 let bookingData = {
@@ -172,7 +169,6 @@ let bookingData = {
   customer: {}
 };
 
-// Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
   initializeApp();
 });
@@ -186,12 +182,10 @@ function initializeApp() {
   setupModalEvents();
 }
 
-// Hero Carousel Functions
 function initializeHeroCarousel() {
   const heroSlides = document.querySelectorAll('.hero-slide');
   const nowPlayingMovies = moviesData.movies.filter(movie => movie.status === 'now-playing');
   
-  // Update hero slides with movie data
   heroSlides.forEach((slide, index) => {
     if (nowPlayingMovies[index]) {
       const movie = nowPlayingMovies[index];
@@ -215,7 +209,6 @@ function initializeHeroCarousel() {
     }
   });
   
-  // Auto-rotate hero carousel
   setInterval(nextSlide, 8000);
 }
 
@@ -237,7 +230,6 @@ function previousSlide() {
   slides[currentHeroSlide].classList.add('active');
 }
 
-// Movie Loading Functions
 function loadMovies() {
   loadNowPlayingMovies();
   loadComingSoonMovies();
@@ -297,14 +289,11 @@ function createMovieCard(movie) {
   return card;
 }
 
-// Movie Details Modal
 function openMovieDetails(movieId) {
   const movie = moviesData.movies.find(m => m.id === movieId);
   if (!movie) return;
   
   selectedMovie = movie;
-  
-  // Populate modal with movie data
   const modalElements = {
     poster: document.getElementById('modalPoster'),
     title: document.getElementById('modalTitle'),
@@ -328,7 +317,6 @@ function openMovieDetails(movieId) {
   if (modalElements.director) modalElements.director.textContent = movie.director;
   if (modalElements.cast) modalElements.cast.textContent = movie.cast.join(', ');
   
-  // Show modal
   const modal = document.getElementById('movieModal');
   if (modal) {
     modal.classList.remove('hidden');
@@ -352,7 +340,6 @@ function playTrailer() {
   }
 }
 
-// Booking Flow
 function showBookingFlow() {
   if (!selectedMovie) return;
   
@@ -394,12 +381,10 @@ function resetBookingData() {
 }
 
 function resetBookingSteps() {
-  // Hide all steps
   document.querySelectorAll('.booking-step').forEach(step => step.classList.remove('active'));
   document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
 }
 
-// Booking Step 1: Showtime Selection
 function initializeBookingStep1() {
   generateDateOptions();
   generateTheaterShowtimes();
@@ -481,7 +466,6 @@ function selectShowtime(theater, time, button) {
   if (nextBtn) nextBtn.disabled = false;
 }
 
-// Booking Step 2: Seat Selection
 function initializeBookingStep2() {
   const theaterInfo = document.getElementById('selectedTheaterInfo');
   const showtimeInfo = document.getElementById('selectedShowtimeInfo');
@@ -502,15 +486,12 @@ function generateSeatMap() {
     const seatRow = document.createElement('div');
     seatRow.className = 'seat-row';
     
-    // Row label
     const rowLabel = document.createElement('div');
     rowLabel.className = 'row-label';
     rowLabel.textContent = row;
     seatRow.appendChild(rowLabel);
     
-    // Seats
     for (let seatNum = 1; seatNum <= moviesData.seatLayout.seatsPerRow; seatNum++) {
-      // Add aisle space
       if (moviesData.seatLayout.aisles.includes(seatNum)) {
         const aisle = document.createElement('div');
         aisle.className = 'aisle';
@@ -521,8 +502,6 @@ function generateSeatMap() {
       seat.className = 'seat available';
       seat.textContent = seatNum;
       seat.addEventListener('click', () => toggleSeat(row, seatNum, seat));
-      
-      // Randomly make some seats occupied for demo
       if (Math.random() < 0.15) {
         seat.classList.remove('available');
         seat.classList.add('occupied');
@@ -573,9 +552,7 @@ function updateBookingSummary() {
   }
 }
 
-// Booking Step 3: Customer Information
 function initializeBookingStep3() {
-  // Focus on first input
   const nameInput = document.getElementById('customerName');
   if (nameInput) nameInput.focus();
 }
@@ -604,7 +581,6 @@ function isValidEmail(email) {
   return emailRegex.test(email);
 }
 
-// Booking Step 4: Confirmation
 function initializeBookingStep4() {
   const bookingId = generateBookingId();
   
@@ -638,8 +614,6 @@ function generateBookingId() {
 function printTicket() {
   window.print();
 }
-
-// Booking Navigation
 function nextBookingStep() {
   const currentStep = document.querySelector('.booking-step.active');
   if (!currentStep) return;
@@ -661,7 +635,6 @@ function nextBookingStep() {
   if (nextStep) nextStep.classList.add('active');
   if (nextStepIndicator) nextStepIndicator.classList.add('active');
   
-  // Initialize step-specific functionality
   switch (nextStepNum) {
     case 2:
       initializeBookingStep2();
@@ -693,7 +666,6 @@ function prevBookingStep() {
   if (prevStepIndicator) prevStepIndicator.classList.add('active');
 }
 
-// Search Functionality
 function initializeSearch() {
   const searchInput = document.getElementById('searchInput');
   const searchBtn = document.querySelector('.search-btn');
@@ -759,8 +731,6 @@ function displaySearchResults(movies) {
     nowPlayingGrid.innerHTML = '<p style="text-align: center; color: rgba(255,255,255,0.7);">No movies found matching your search.</p>';
   }
 }
-
-// Filter Functionality
 function initializeFilters() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   
@@ -774,8 +744,6 @@ function initializeFilters() {
     });
   });
 }
-
-// Navigation
 function initializeNavigation() {
   const navLinks = document.querySelectorAll('.nav-link');
   
@@ -876,8 +844,6 @@ document.addEventListener('click', function(e) {
     }
   }
 });
-
-
 window.openMovieDetails = openMovieDetails;
 window.closeModal = closeModal;
 window.showBookingFlow = showBookingFlow;
