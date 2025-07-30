@@ -1567,7 +1567,6 @@ body {
     background: rgba(255, 255, 255, 0.15);
 }
 
-/* Confirmation */
 .confirmation-details {
     margin-bottom: var(--space-32);
 }
@@ -1597,7 +1596,6 @@ body {
     font-size: var(--font-size-xl);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         padding: 0 var(--space-16);
@@ -1657,7 +1655,6 @@ body {
     }
 }
 
-/* Utility Classes */
 .hidden {
     display: none !important;
 }
@@ -1674,7 +1671,6 @@ body {
     margin-bottom: var(--space-16);
 }
 
-/* Loading Animation */
 @keyframes pulse {
     0% { opacity: 1; }
     50% { opacity: 0.5; }
