@@ -204,6 +204,7 @@ function initializeHeroCarousel() {
       description.textContent = movie.description;
       
       const poster = slide.querySelector('.poster-img');
+      if(poster){
       poster.src = movie.poster;
       poster.alt = movie.title;
     }
