@@ -115,7 +115,7 @@ const moviesData = {
       "genre": "Action/Thriller",
       "releaseDate": "December 22, 2028",
       "description": "The rivalry and betrayal between Devaratha and his childhood friend, Vardha Raja (Prithviraj Sukumaran), as they vie for control of Khansar.",
-      "poster": "https://encrypted-tbn2.gstaticcom/images?q=tbn:ANd9GcQtqR7E0nfNEQBDpZasJ04uz-7zpzLGYl0PDNX8oSOLitkl7tGB",
+      "poster": "https://m.media-amazon.com/images/M/MV5BZjM5NjQ3MTEtYjY1Yy00NzMwLWIzZGEtN2EyMzg4NDRhZmNhXkEyXkFqcGc@._V1_.jpg",
       "backdrop": "/api/placeholder/1200/675",
       "trailer": "https://example.com/badguys2-trailer",
       "director": "Prashanth Neel",
@@ -192,21 +192,24 @@ function initializeHeroCarousel() {
       slide.setAttribute('data-movie', movie.id);
       
       const backdrop = slide.querySelector('.hero-backdrop');
-      backdrop.style.backgroundImage = `url('${movie.backdrop}')`;
+      if (backdrop) {
+        backdrop.style.backgroundImage = `url('${movie.backdrop}')`;
+      }
       
       const title = slide.querySelector('.hero-title');
-      title.textContent = movie.title;
+      if (title) title.textContent = movie.title;
       
       const meta = slide.querySelector('.hero-meta');
-      meta.textContent = `${movie.rating} • ${movie.genre} • ${movie.duration}`;
+      if (meta) meta.textContent = `${movie.rating} • ${movie.genre} • ${movie.duration}`;
       
       const description = slide.querySelector('.hero-description');
-      description.textContent = movie.description;
+      if (description) description.textContent = movie.description;
       
       const poster = slide.querySelector('.poster-img');
-      if(poster){
-      poster.src = movie.poster;
-      poster.alt = movie.title;
+      if (poster) {
+        poster.src = movie.poster;
+        poster.alt = movie.title;
+      }
     }
   });
   
@@ -500,13 +503,13 @@ function generateSeatMap() {
       }
       
       const seat = document.createElement('div');
-      seat.className = 'seat available';
+      const isOccupied = Math.random() < 0.15;
       seat.textContent = seatNum;
-      seat.addEventListener('click', () => toggleSeat(row, seatNum, seat));
-      if (Math.random() < 0.15) {
-        seat.classList.remove('available');
-        seat.classList.add('occupied');
-        seat.removeEventListener('click', () => toggleSeat(row, seatNum, seat));
+      if (isOccupied) {
+        seat.className = 'seat occupied';
+      } else {
+        seat.className = 'seat available';
+        seat.addEventListener('click', () => toggleSeat(row, seatNum, seat));
       }
       
       seatRow.appendChild(seat);

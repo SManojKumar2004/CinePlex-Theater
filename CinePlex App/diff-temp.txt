@@ -1,0 +1,264 @@
+﻿diff --git a/CinePlex App/script.js b/CinePlex App/script.js
+index e5008c8..7d5e7b0 100644
+--- a/CinePlex App/script.js	
++++ b/CinePlex App/script.js	
+@@ -4,122 +4,122 @@ const moviesData = {
+   "movies": [
+     {
+       "id": 1,
+-      "title": "Superman",
+-      "rating": "U/A",
+-      "duration": "2h 15min",
+-      "genre": "Action/Adventure",
+-      "releaseDate": "July 11, 2025",
+-      "description": "James Gunn's reboot of Superman kicks off a new generation of the DC Cinematic Universe, focusing on Lois Lane and Clark Kent's relationship.",
+-      "poster": "https://i.redd.it/r99zvfvegk8f1.png",
+-      "backdrop": "https://pyxis.nymag.com/v1/imgs/b91/219/9cfbde48d3984c2f7237a41e45868bd425-superman-trailer.2x.rsocial.w600.png",
+-      "trailer": "https://www.youtube.com/watch?v=Ox8ZLF6cGM0",
+-      "director": "James Gunn",
+-      "cast": ["David Corenswet", "Rachel Brosnahan", "Nathan Fillion"],
++      "title": "Oppenheimer",
++      "rating": "PG-13",
++      "duration": "3h 0min",
++      "genre": "Drama/Biography",
++      "releaseDate": "July 21, 2023",
++      "description": "Christopher Nolan's epic biopic of J. Robert Oppenheimer and the creation of the atomic bomb.",
++      "poster": "https://m.media-amazon.com/images/M/MV5BOGU3NzM1NTAtYTdmMC00MTY3LThlZTgtMzE1ZTE5OWNkOWY0XkEyXkFqcGdeQXVyNjg4NTY5OTQ@._V1_.jpg",
++      "backdrop": "https://m.media-amazon.com/images/M/MV5BN2IyMTcwODgtN2YxZi00Y2ZmLWE1N2YtMTY4MzBjZDkwNjJjXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_.jpg",
++      "trailer": "https://www.youtube.com/watch?v=1AgY-z8rZps",
++      "director": "Christopher Nolan",
++      "cast": ["Cillian Murphy", "Emily Blunt", "Matt Damon"],
+       "status": "now-playing"
+     },
+     {
+       "id": 2,
+-      "title": "Jurassic World Rebirth",
++      "title": "Barbie",
+       "rating": "PG-13",
+-      "duration": "2h 13min",
+-      "genre": "Action/Sci-Fi",
+-      "releaseDate": "July 2, 2025",
+-      "description": "The beloved Jurassic franchise returns with another larger-than-life dinosaur phenomenon, featuring a star-studded cast.",
+-      "poster": "https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/4a663165-56c9-496a-9f7e-6ae4ff374346.png",
+-      "backdrop": "/api/placeholder/1200/675",
+-      "trailer": "https://example.com/jurassic-trailer",
+-      "director": "Gareth Edwards",
+-      "cast": ["Scarlett Johansson", "Mahershala Ali", "Jonathan Bailey"],
++      "duration": "1h 54min",
++      "genre": "Comedy/Fantasy",
++      "releaseDate": "July 21, 2023",
++      "description": "A vibrant adventure in Barbie Land where Barbie discovers she is not quite perfect and takes a journey to the real world.",
++      "poster": "https://m.media-amazon.com/images/M/MV5BNzQzNWRiZGEtMzNhNy00NDlkLWEzNzUtMDczMWE5ZWFlOTdhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_.jpg",
++      "backdrop": "https://m.media-amazon.com/images/M/MV5BMDhiMDNiY2EtYzMzYy00NTVkLTkxMWYtODRlMzQzZTgxZDgzXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
++      "trailer": "https://www.youtube.com/watch?v=O2V1zpOHv7k",
++      "director": "Greta Gerwig",
++      "cast": ["Margot Robbie", "Ryan Gosling", "America Ferrera"],
+       "status": "now-playing"
+     },
+     {
+       "id": 3,
+-      "title": "The Fantastic Four: First Steps",
++      "title": "Dune: Part Two",
+       "rating": "PG-13",
+-      "duration": "2h 5min",
+-      "genre": "Action/Superhero",
+-      "releaseDate": "July 25, 2025",
+-      "description": "The Fantastic Four make their return to the big screen in this highly anticipated Marvel adventure.",
+-      "poster": "https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/e4fb6536-f0f2-42cc-9253-39511b4f21a3.png",
+-      "backdrop": "/api/placeholder/1200/675",  
+-      "trailer": "https://example.com/fantastic-four-trailer",
+-      "director": "Matt Shakman",
+-      "cast": ["Pedro Pascal", "Vanessa Kirby", "Joseph Quinn"],
++      "duration": "2h 45min",
++      "genre": "Action/Sci-Fi",
++      "releaseDate": "March 1, 2024",
++      "description": "Paul Atreides unites with Chani and the Fremen to seek revenge against the conspirators who destroyed his family.",
++      "poster": "https://m.media-amazon.com/images/M/MV5BMjEyZjEwZjAtYjBiMC00YjA5LWIyNTctYTYyZDczNDAzNDJkXkEyXkFqcGdeQXVyMTA0OTc4NDY4._V1_.jpg",
++      "backdrop": "https://m.media-amazon.com/images/M/MV5BOWI1ZGM3YzAtODU4NS00YjkxLWFjMTUtMWRhN2JhNDYwZGY5XkEyXkFqcGdeQXVyNzQ1NDY2NzA@._V1_.jpg",
++      "trailer": "https://www.youtube.com/watch?v=TMoJWVgiA2w",
++      "director": "Denis Villeneuve",
++      "cast": ["Timoth├⌐e Chalamet", "Zendaya", "Florence Pugh"],
+       "status": "now-playing"
+     },
+     {
+       "id": 4,
+-      "title": "I Know What You Did Last Summer",
+-      "rating": "R",
+-      "duration": "1h 50min",
+-      "genre": "Horror/Thriller",
+-      "releaseDate": "July 18, 2025",
+-      "description": "A fresh take on the classic horror thriller that will keep you on the edge of your seat.",
+-      "poster": "https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/e69d1a28-2293-4ab3-9990-efe541530e1b.png",
+-      "backdrop": "/api/placeholder/1200/675",
+-      "trailer": "https://example.com/ikwydls-trailer",
+-      "director": "Jennifer Kent",
+-      "cast": ["Madison Bailey", "Fiona Dourif", "Tyriq Withers"],
++      "title": "Spider-Man: Across the Spider-Verse",
++      "rating": "PG",
++      "duration": "2h 20min",
++      "genre": "Animation/Action",
++      "releaseDate": "June 2, 2023",
++      "description": "Miles Morales returns for an epic multiverse adventure with Spider-People from across alternate realities.",
++      "poster": "https://m.media-amazon.com/images/M/MV5BZjBlMTcyODUtMzUyNC00MzZhLWI1YjktMTEzM2Y5MjI4MzE2XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_.jpg",
++      "backdrop": "https://m.media-amazon.com/images/M/MV5BZjNkYTU2ZDAtY2RjYS00OWQxLThmMTEtY2I0YTY0MDkyMzlkXkEyXkFqcGdeQXVyNzA5NjUyNjM@._V1_.jpg",
++      "trailer": "https://www.youtube.com/watch?v=3vQGdXre6P0",
++      "director": "Joaquim Dos Santos",
++      "cast": ["Shameik Moore", "Hailee Steinfeld", "Oscar Isaac"],
+       "status": "now-playing"
+     },
+     {
+       "id": 5,
+-      "title": "F1: The Movie",
++      "title": "Guardians of the Galaxy Vol. 3",
+       "rating": "PG-13",
+-      "duration": "2h 20min",
+-      "genre": "Action/Sports",
+-      "releaseDate": "June 27, 2025",
+-      "description": "Experience the high-octane world of Formula 1 racing in this adrenaline-pumping sports drama.",
+-      "poster": "https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/620c83cf-c38b-4622-a121-7caa198589b6.png",
+-      "backdrop": "/api/placeholder/1200/675",
+-      "trailer": "https://example.com/f1-trailer",
+-      "director": "Joseph Kosinski",
+-      "cast": ["Brad Pitt", "Damson Idris", "Kerry Condon"],
++      "duration": "2h 30min",
++      "genre": "Action/Adventure",
++      "releaseDate": "May 5, 2023",
++      "description": "Star-Lord and the Guardians face their most personal mission yet as they protect Rocket and fight a dangerous new enemy.",
++      "poster": "https://m.media-amazon.com/images/M/MV5BZWY0MjM3MWQtZWQyYi00MzFmLTg3NWEtNGUxMzJkOTE0ODliXkEyXkFqcGdeQXVyODY1NjE4ODg@._V1_.jpg",
++      "backdrop": "https://m.media-amazon.com/images/M/MV5BYTk0NmNkMzUtNmRjMC00YjE4LWFjNDItNzJhNjAzZGVmOWNlXkEyXkFqcGdeQXVyNjUzOTQ1OTc@._V1_.jpg",
++      "trailer": "https://www.youtube.com/watch?v=8q87zZ2nVFo",
++      "director": "James Gunn",
++      "cast": ["Chris Pratt", "Zoe Saldana", "Dave Bautista"],
+       "status": "now-playing"
+     },
+     {
+       "id": 6,
+-      "title": "How to Train Your Dragon",
+-      "rating": "PG",
+-      "duration": "1h 44min",
+-      "genre": "Animation/Family",
+-      "releaseDate": "June 13, 2025",
+-      "description": "The beloved animated series continues with Hiccup and Toothless in their greatest adventure yet.",
+-      "poster": "https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/809e4770-8890-41ee-9bae-339709b9df20.png",
+-      "backdrop": "/api/placeholder/1200/675",
+-      "trailer": "https://example.com/httyd-trailer",
+-      "director": "Dean DeBlois",
+-      "cast": ["Mason Thames", "Nico Parker", "Gerard Butler"],
++      "title": "Mission: Impossible - Dead Reckoning Part One",
++      "rating": "PG-13",
++      "duration": "2h 43min",
++      "genre": "Action/Thriller",
++      "releaseDate": "July 12, 2023",
++      "description": "Ethan Hunt and the IMF team race against time to stop a dangerous AI from falling into the wrong hands.",
++      "poster": "https://m.media-amazon.com/images/M/MV5BMTJmOWNjOTEtMDZhMS00ZTJmLWJhMjktMzYxYTI1MTRlMzMyXkEyXkFqcGdeQXVyMjM4NTMwNjA@._V1_.jpg",
++      "backdrop": "https://m.media-amazon.com/images/M/MV5BMzdmYjhjZDAtYTM2Ni00YzE4LThmOWEtN2M3ZDJlZTRkYmJlXkEyXkFqcGdeQXVyNTg4NzQxMjc@._V1_.jpg",
++      "trailer": "https://www.youtube.com/watch?v=eltm_XJH6qA",
++      "director": "Christopher McQuarrie",
++      "cast": ["Tom Cruise", "Hayley Atwell", "Rebecca Ferguson"],
+       "status": "now-playing"
+     },
+     {
+       "id": 7,
+-      "title": "HariHara VeeraMallu",
+-      "rating": "A",
+-      "duration": "2h 32min",
++      "title": "Superman: Legacy",
++      "rating": "PG-13",
++      "duration": "2h 15min",
+       "genre": "Action/Adventure",
+-      "releaseDate": "July 24, 2025",
+-      "description": "Veera Mallu spearheads a revolution against the tyrannical actions of the army generals.",
+-      "poster": "https://m.media-amazon.com/images/M/MV5BMzg3ZGU1NmEtODkwOS00MjYyLTljODctMWZjZGU1NGI0MjBlXkEyXkFqcGc@._V1_.jpg",
+-      "backdrop": "/api/placeholder/1200/675",
+-      "trailer": "https://youtu.be/Qv-NEQJehVU?si=FPdy27TXJL2CKedA",
+-      "director": "Krish Jagarlamudi",
+-      "cast": ["Pawan Kalyan", "Nidhi Agarwal"],
+-      "status": "now-playing"
++      "releaseDate": "July 11, 2025",
++      "description": "A modern reboot of Superman focusing on Clark Kent's origin and modern-day heroism in Metropolis.",
++      "poster": "https://m.media-amazon.com/images/M/MV5BMTExNzI0NWYtM2JkMS00MGY3LTk2MjQtYjRmMmEyMWU3NzNkXkEyXkFqcGdeQXVyNjcyNjY4NjA@._V1_.jpg",
++      "backdrop": "https://m.media-amazon.com/images/M/MV5BODQ5NDI5MjEtN2ZmZi00Zjk4LWFkNzAtMWMzZjZjZmQ1NzlmXkEyXkFqcGdeQXVyMTEzMTg4MzY@._V1_.jpg",
++      "trailer": "https://www.youtube.com/watch?v=Hi7JJUmbJkM",
++      "director": "James Gunn",
++      "cast": ["David Corenswet", "Rachel Brosnahan", "Nathan Fillion"],
++      "status": "coming-soon"
+     },
+     {
+       "id": 8,
+-      "title": "Salaar part2: Shouryanga Parvam",
+-      "rating": "A",
+-      "duration": "2h 55min",
+-      "genre": "Action/Thriller",
+-      "releaseDate": "December 22, 2028",
+-      "description": "The rivalry and betrayal between Devaratha and his childhood friend, Vardha Raja (Prithviraj Sukumaran), as they vie for control of Khansar.",
+-      "poster": "https://encrypted-tbn2.gstaticcom/images?q=tbn:ANd9GcQtqR7E0nfNEQBDpZasJ04uz-7zpzLGYl0PDNX8oSOLitkl7tGB",
+-      "backdrop": "/api/placeholder/1200/675",
+-      "trailer": "https://example.com/badguys2-trailer",
+-      "director": "Prashanth Neel",
+-      "cast": ["Prabhas", "Shruti Hassan"],
++      "title": "Deadpool & Wolverine",
++      "rating": "R",
++      "duration": "2h 10min",
++      "genre": "Action/Comedy",
++      "releaseDate": "July 26, 2024",
++      "description": "Deadpool joins forces with Wolverine to chase down a threat that could change the future of mutantkind.",
++      "poster": "https://m.media-amazon.com/images/M/MV5BNTE0YzI4OTMtNjE1YS00NTAxLWI2MDMtMzBjMDdjMjNhM2I5XkEyXkFqcGdeQXVyNjUwMzI4MzU@._V1_.jpg",
++      "backdrop": "https://m.media-amazon.com/images/M/MV5BMTUxOTc5MDEtYmM1My00ZGRhLTg2MGQtNjY4MjMwYzFkYmMyXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg",
++      "trailer": "https://www.youtube.com/watch?v=RoKF8H2yISs",
++      "director": "Shawn Levy",
++      "cast": ["Ryan Reynolds", "Hugh Jackman", "Emma Corrin"],
+       "status": "coming-soon"
+     }
+   ],
+@@ -192,21 +192,24 @@ function initializeHeroCarousel() {
+       slide.setAttribute('data-movie', movie.id);
+       
+       const backdrop = slide.querySelector('.hero-backdrop');
+-      backdrop.style.backgroundImage = `url('${movie.backdrop}')`;
++      if (backdrop) {
++        backdrop.style.backgroundImage = `url('${movie.backdrop}')`;
++      }
+       
+       const title = slide.querySelector('.hero-title');
+-      title.textContent = movie.title;
++      if (title) title.textContent = movie.title;
+       
+       const meta = slide.querySelector('.hero-meta');
+-      meta.textContent = `${movie.rating} ΓÇó ${movie.genre} ΓÇó ${movie.duration}`;
++      if (meta) meta.textContent = `${movie.rating} ΓÇó ${movie.genre} ΓÇó ${movie.duration}`;
+       
+       const description = slide.querySelector('.hero-description');
+-      description.textContent = movie.description;
++      if (description) description.textContent = movie.description;
+       
+       const poster = slide.querySelector('.poster-img');
+-      if(poster){
+-      poster.src = movie.poster;
+-      poster.alt = movie.title;
++      if (poster) {
++        poster.src = movie.poster;
++        poster.alt = movie.title;
++      }
+     }
+   });
+   
+@@ -500,13 +503,13 @@ function generateSeatMap() {
+       }
+       
+       const seat = document.createElement('div');
+-      seat.className = 'seat available';
++      const isOccupied = Math.random() < 0.15;
+       seat.textContent = seatNum;
+-      seat.addEventListener('click', () => toggleSeat(row, seatNum, seat));
+-      if (Math.random() < 0.15) {
+-        seat.classList.remove('available');
+-        seat.classList.add('occupied');
+-        seat.removeEventListener('click', () => toggleSeat(row, seatNum, seat));
++      if (isOccupied) {
++        seat.className = 'seat occupied';
++      } else {
++        seat.className = 'seat available';
++        seat.addEventListener('click', () => toggleSeat(row, seatNum, seat));
+       }
+       
+       seatRow.appendChild(seat);
